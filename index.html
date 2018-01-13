@@ -9,18 +9,19 @@
   <div id="app"></div>
 
   <script id="template" type="text/ractive">
+    
+    {{#if name}}
+      <p>Hello, {{name}}!</p>
+    {{else}}
+      <form on-submit="submit">
+        <input type="text" placeholder="what's your name?" value="{{val}}">
+        <input type="submit" value="submit">
+      </form>
+    {{/if}}
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
-
-  <script>
-    var ractive = new Ractive({
-      el: '#app',
-      template: '#template',
-      data: {
-   
-      } 
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
